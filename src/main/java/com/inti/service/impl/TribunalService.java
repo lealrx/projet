@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.inti.entities.Tribunal;
 import com.inti.repositories.TribunalRepository;
 import com.inti.service.interfaces.ITribunalService;
 
@@ -15,23 +16,23 @@ public class TribunalService implements ITribunalService {
 	TribunalRepository tribunalRepository;
 
 	@Override
-	public List<ITribunalService> findAll() {
-		return null;
+	public List<Tribunal> findAll() {
+		return tribunalRepository.findAll();
 	}
 
 	@Override
-	public ITribunalService findOne(Long id) {
-		return null;
+	public Tribunal findOne(Long id) {
+		return tribunalRepository.findOne(id);
 	}
 
 	@Override
-	public ITribunalService save(ITribunalService tribunal) {
-		return null;
+	public Tribunal save(Tribunal tribunal) {
+		return tribunalRepository.save(tribunal);
 	}
 
 	@Override
 	public void delete(Long id) {
-
+		tribunalRepository.delete(id);
 	}
 
 }

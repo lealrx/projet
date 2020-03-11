@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.inti.entities.Utilisateur;
 import com.inti.repositories.UtilisateurRepository;
 import com.inti.service.interfaces.IUtilisateurService;
 
@@ -15,23 +16,28 @@ public class UtilisateurService implements IUtilisateurService {
 	UtilisateurRepository utilisateurRepository;
 
 	@Override
-	public List<IUtilisateurService> findAll() {
-		return null;
+	public List<Utilisateur> findAll() {
+		return utilisateurRepository.findAll();
 	}
 
 	@Override
-	public IUtilisateurService findOne(Long id) {
-		return null;
+	public Utilisateur findOne(Long id) {
+		return utilisateurRepository.findOne(id);
 	}
 
 	@Override
-	public IUtilisateurService save(IUtilisateurService user) {
-		return null;
+	public Utilisateur save(Utilisateur user) {
+		return utilisateurRepository.save(user);
 	}
 
 	@Override
 	public void delete(Long id) {
-
+		utilisateurRepository.delete(id);
+	}
+	
+	@Override
+	public Utilisateur findOneByUsername(String username) {
+		return utilisateurRepository.findOneByUsername(username);
 	}
 
 }

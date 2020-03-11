@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.inti.entities.Professionnel;
 import com.inti.repositories.ProfessionnelRepository;
 import com.inti.service.interfaces.IProfessionnelService;
 
@@ -15,23 +16,23 @@ public class ProfessionnelService implements IProfessionnelService {
 	ProfessionnelRepository professionnelRepository;
 
 	@Override
-	public List<IProfessionnelService> findAll() {
-		return null;
+	public List<Professionnel> findAll() {
+		return professionnelRepository.findAll();
 	}
 
 	@Override
-	public IProfessionnelService findOne(Long id) {
-		return null;
+	public Professionnel findOne(Long id) {
+		return professionnelRepository.findOne(id);
 	}
 
 	@Override
-	public IProfessionnelService save(IProfessionnelService professionnel) {
-		return null;
+	public Professionnel save(Professionnel professionnel) {
+		return professionnelRepository.save(professionnel);
 	}
 
 	@Override
 	public void delete(Long id) {
-
+		professionnelRepository.delete(id);
 	}
 
 }
