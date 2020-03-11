@@ -7,5 +7,6 @@ import com.inti.entities.Affaire;
 
 @Repository
 public interface AffaireRepository extends JpaRepository<Affaire, Long> {
+	Affaire findOneByTitre(String titre);
 
 }

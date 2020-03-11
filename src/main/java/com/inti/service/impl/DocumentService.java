@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.inti.entities.Document;
 import com.inti.repositories.DocumentRepository;
 import com.inti.service.interfaces.IDocumentService;
 
@@ -15,22 +16,23 @@ public class DocumentService implements IDocumentService {
 	DocumentRepository documentRepository;
 
 	@Override
-	public List<IDocumentService> findAll() {
-		return null;
+	public List<Document> findAll() {
+		return documentRepository.findAll();
 	}
 
 	@Override
-	public IDocumentService findOne(Long id) {
-		return null;
+	public Document findOne(Long id) {
+		return documentRepository.findOne(id);
 	}
 
 	@Override
-	public IDocumentService save(IDocumentService document) {
-		return null;
+	public Document save(Document document) {
+		return documentRepository.save(document);
 	}
 
 	@Override
 	public void delete(Long id) {
+		documentRepository.delete(id);
 
 	}
 

@@ -18,7 +18,7 @@ public class Affaire implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idAffaire;
-	private String referenceffaire;
+	private String referenceAffaire;
 	private String titreAffaire;
 	private String descriptionAffaire;
 	private String statutAffaire;
@@ -30,8 +30,8 @@ public class Affaire implements Serializable {
 	public Affaire() {
 	}
 
-	public Affaire(String referenceffaire, String titreAffaire, String descriptionAffaire, String statutAffaire) {
-		this.referenceffaire = referenceffaire;
+	public Affaire(String referenceAffaire, String titreAffaire, String descriptionAffaire, String statutAffaire) {
+		this.referenceAffaire = referenceAffaire;
 		this.titreAffaire = titreAffaire;
 		this.descriptionAffaire = descriptionAffaire;
 		this.statutAffaire = statutAffaire;
@@ -45,12 +45,12 @@ public class Affaire implements Serializable {
 		this.idAffaire = idAffaire;
 	}
 
-	public String getReferenceffaire() {
-		return referenceffaire;
+	public String getReferenceAffaire() {
+		return referenceAffaire;
 	}
 
-	public void setReferenceffaire(String referenceffaire) {
-		this.referenceffaire = referenceffaire;
+	public void setReferenceAffaire(String referenceAffaire) {
+		this.referenceAffaire = referenceAffaire;
 	}
 
 	public String getTitreAffaire() {
@@ -95,7 +95,7 @@ public class Affaire implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Affaire [referenceffaire=" + referenceffaire + ", titreAffaire=" + titreAffaire + ", descriptionAffaire="
+		return "Affaire [referenceAffaire=" + referenceAffaire + ", titreAffaire=" + titreAffaire + ", descriptionAffaire="
 				+ descriptionAffaire + ", statutAffaire=" + statutAffaire + "]";
 	}
 	

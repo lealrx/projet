@@ -5,33 +5,40 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.inti.repositories.UtilisateurRepository;
-import com.inti.service.interfaces.IUtilisateurService;
+import com.inti.entities.Affaire;
+import com.inti.repositories.AffaireRepository;
+import com.inti.service.interfaces.IAffaireService;
 
 @Service
-public class AffaireService implements IUtilisateurService {
+public class AffaireService implements IAffaireService {
 
 	@Autowired
-	UtilisateurRepository utilisateurRepository;
+	AffaireRepository affaireRepository;
 
 	@Override
-	public List<IUtilisateurService> findAll() {
-		return null;
+	public List<Affaire> findAll() {
+		return affaireRepository.findAll();
 	}
 
 	@Override
-	public IUtilisateurService findOne(Long id) {
-		return null;
+	public Affaire findOne(Long id) {
+		return affaireRepository.findOne(id);
 	}
 
 	@Override
-	public IUtilisateurService save(IUtilisateurService user) {
-		return null;
+	public Affaire save(Affaire affaire) {
+		return affaireRepository.save(affaire);
 	}
 
 	@Override
 	public void delete(Long id) {
-
+		affaireRepository.delete(id);
 	}
+
+	@Override
+	public Affaire findOneByTitre(String titre) {
+		return affaireRepository.findOneByTitre(titre);
+	}
+	
 
 }

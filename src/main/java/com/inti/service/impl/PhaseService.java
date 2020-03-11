@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.inti.entities.Phase;
 import com.inti.repositories.PhaseRepository;
 import com.inti.service.interfaces.IPhaseService;
 
@@ -15,22 +16,23 @@ public class PhaseService implements IPhaseService {
 	PhaseRepository phaseRepository;
 
 	@Override
-	public List<IPhaseService> findAll() {
-		return null;
+	public List<Phase> findAll() {
+		return phaseRepository.findAll();
 	}
 
 	@Override
-	public IPhaseService findOne(Long id) {
-		return null;
+	public Phase findOne(Long id) {
+		return phaseRepository.findOne(id);
 	}
 
 	@Override
-	public IPhaseService save(IPhaseService phase) {
-		return null;
+	public Phase save(Phase phase) {
+		return phaseRepository.save(phase);
 	}
 
 	@Override
 	public void delete(Long id) {
+		phaseRepository.delete(id);
 
 	}
 

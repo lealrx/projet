@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.inti.entities.Particulier;
 import com.inti.repositories.ParticulierRepository;
 import com.inti.service.interfaces.IParticulierService;
 
@@ -15,22 +16,23 @@ public class ParticulierService implements IParticulierService {
 	ParticulierRepository particulierRepository;
 
 	@Override
-	public List<IParticulierService> findAll() {
-		return null;
+	public List<Particulier> findAll() {
+		return particulierRepository.findAll();
 	}
 
 	@Override
-	public IParticulierService findOne(Long id) {
-		return null;
+	public Particulier findOne(Long id) {
+		return particulierRepository.findOne(id);
 	}
 
 	@Override
-	public IParticulierService save(IParticulierService particulier) {
-		return null;
+	public Particulier save(Particulier particulier) {
+		return particulierRepository.save(particulier);
 	}
 
 	@Override
 	public void delete(Long id) {
+		particulierRepository.delete(id);
 
 	}
 
