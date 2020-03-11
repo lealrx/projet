@@ -23,11 +23,11 @@ public class Tache implements Serializable {
 	private Long idTache;
 	@Temporal(TemporalType.DATE)
 	private Date dateCreationTache;
-	private String Titre;
+	private String titreTache;
 	private String description;
 	private boolean statutAudience;
 	@ManyToOne(fetch = FetchType.EAGER)
-	private Utilisateur userClient;
+	private Utilisateur userTache;
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Affaire affaireTache;
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -38,13 +38,14 @@ public class Tache implements Serializable {
 	public Tache() {
 	}
 
-	public Tache(Date dateCreationTache, String titre, String description, boolean statutAudience) {
+
+	public Tache(Date dateCreationTache, String titreTache, String description, boolean statutAudience) {
 		this.dateCreationTache = dateCreationTache;
-		Titre = titre;
+		this.titreTache = titreTache;
 		this.description = description;
 		this.statutAudience = statutAudience;
-
 	}
+
 
 	public Long getIdTache() {
 		return idTache;
@@ -62,13 +63,15 @@ public class Tache implements Serializable {
 		this.dateCreationTache = dateCreationTache;
 	}
 
-	public String getTitre() {
-		return Titre;
+	public String getTitreTache() {
+		return titreTache;
 	}
 
-	public void setTitre(String titre) {
-		Titre = titre;
+
+	public void setTitreTache(String titreTache) {
+		this.titreTache = titreTache;
 	}
+
 
 	public String getDescription() {
 		return description;
@@ -86,13 +89,17 @@ public class Tache implements Serializable {
 		this.statutAudience = statutAudience;
 	}
 
-	public Utilisateur getUserClient() {
-		return userClient;
+	
+
+	public Utilisateur getUserTache() {
+		return userTache;
 	}
 
-	public void setUserClient(Utilisateur userClient) {
-		this.userClient = userClient;
+
+	public void setUserTache(Utilisateur userTache) {
+		this.userTache = userTache;
 	}
+
 
 	public Affaire getAffaireTache() {
 		return affaireTache;
@@ -118,10 +125,13 @@ public class Tache implements Serializable {
 		this.phases = phases;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Tache [dateCreationTache=" + dateCreationTache + ", Titre=" + Titre + ", description=" + description
-				+ ", statutAudience=" + statutAudience + "]";
+		return "Tache [dateCreationTache=" + dateCreationTache + ", titreTache=" + titreTache + ", description="
+				+ description + ", statutAudience=" + statutAudience + "]";
 	}
+
+	
 
 }

@@ -50,7 +50,7 @@ public class UtilisateurController {
 		currentUtilisateur.setPassword(utilisateur.getPassword());
 		currentUtilisateur.setEmail(utilisateur.getEmail());
 		currentUtilisateur.setDateNaissance(utilisateur.getDateNaissance());
-		currentUtilisateur.setImg(utilisateur.getImg());
+		currentUtilisateur.setImage(utilisateur.getImage());
 		currentUtilisateur.setRoles(utilisateur.getRoles());
 		currentUtilisateur.setClients(utilisateur.getClients());
 		currentUtilisateur.setTaches(utilisateur.getTaches());

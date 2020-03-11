@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.inti.entities.Tache;
 import com.inti.repositories.TacheRepository;
 import com.inti.service.interfaces.ITacheService;
 
@@ -15,23 +16,23 @@ public class TacheService implements ITacheService {
 	TacheRepository tacheRepository;
 
 	@Override
-	public List<ITacheService> findAll() {
-		return null;
+	public List<Tache> findAll() {
+		return tacheRepository.findAll();
 	}
 
 	@Override
-	public ITacheService findOne(Long id) {
-		return null;
+	public Tache findOne(Long id) {
+		return tacheRepository.findOne(id);
 	}
 
 	@Override
-	public ITacheService save(ITacheService tache) {
-		return null;
+	public Tache save(Tache tache) {
+		return tacheRepository.save(tache);
 	}
 
 	@Override
 	public void delete(Long id) {
-
+		tacheRepository.delete(id);
 	}
 
 }

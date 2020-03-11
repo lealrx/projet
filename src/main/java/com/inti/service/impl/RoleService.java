@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.inti.entities.Role;
 import com.inti.repositories.RoleRepository;
 import com.inti.service.interfaces.IRoleService;
 
@@ -15,23 +16,23 @@ public class RoleService implements IRoleService {
 	RoleRepository roleRepository;
 
 	@Override
-	public List<IRoleService> findAll() {
-		return null;
+	public List<Role> findAll() {
+		return roleRepository.findAll();
 	}
 
 	@Override
-	public IRoleService findOne(Long id) {
-		return null;
+	public Role findOne(Long id) {
+		return roleRepository.findOne(id);
 	}
 
 	@Override
-	public IRoleService save(IRoleService role) {
-		return null;
+	public Role save(Role role) {
+		return roleRepository.save(role);
 	}
 
 	@Override
 	public void delete(Long id) {
-
+		roleRepository.delete(id);
 	}
 
 }
