@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+@Entity
 public class Tache implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -38,14 +40,12 @@ public class Tache implements Serializable {
 	public Tache() {
 	}
 
-
 	public Tache(Date dateCreationTache, String titreTache, String description, boolean statutAudience) {
 		this.dateCreationTache = dateCreationTache;
 		this.titreTache = titreTache;
 		this.description = description;
 		this.statutAudience = statutAudience;
 	}
-
 
 	public Long getIdTache() {
 		return idTache;
@@ -67,11 +67,9 @@ public class Tache implements Serializable {
 		return titreTache;
 	}
 
-
 	public void setTitreTache(String titreTache) {
 		this.titreTache = titreTache;
 	}
-
 
 	public String getDescription() {
 		return description;
@@ -89,17 +87,13 @@ public class Tache implements Serializable {
 		this.statutAudience = statutAudience;
 	}
 
-	
-
 	public Utilisateur getUserTache() {
 		return userTache;
 	}
 
-
 	public void setUserTache(Utilisateur userTache) {
 		this.userTache = userTache;
 	}
-
 
 	public Affaire getAffaireTache() {
 		return affaireTache;
@@ -125,13 +119,10 @@ public class Tache implements Serializable {
 		this.phases = phases;
 	}
 
-
 	@Override
 	public String toString() {
 		return "Tache [dateCreationTache=" + dateCreationTache + ", titreTache=" + titreTache + ", description="
 				+ description + ", statutAudience=" + statutAudience + "]";
 	}
-
-	
 
 }

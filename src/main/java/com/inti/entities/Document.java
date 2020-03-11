@@ -13,10 +13,12 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Document implements Serializable{
+public class Document implements Serializable {
+
 	private static final long serialVersionUID = 1L;
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idDocument;
 	@Temporal(TemporalType.DATE)
 	private Date dateCreationDocument;
@@ -24,7 +26,7 @@ public class Document implements Serializable{
 	private String nomDocument;
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Affaire affaireDoc;
-	
+
 	public Document() {
 	}
 
@@ -79,12 +81,5 @@ public class Document implements Serializable{
 		return "Document [dateCreationDocument=" + dateCreationDocument + ", descriptionDocument=" + descriptionDocument
 				+ ", nomDocument=" + nomDocument + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }

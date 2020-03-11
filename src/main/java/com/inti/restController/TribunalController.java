@@ -19,8 +19,8 @@ public class TribunalController {
 
 	@Autowired
 	ITribunalService tribunalService;
-	
-	@RequestMapping(value= "tribunals", method= RequestMethod.GET)
+
+	@RequestMapping(value = "tribunals", method = RequestMethod.GET)
 	public List<Tribunal> findAll() {
 		return tribunalService.findAll();
 	}
@@ -47,6 +47,7 @@ public class TribunalController {
 		currentTribunal.setFax(tribunal.getFax());
 		currentTribunal.setTelTribunal(tribunal.getTelTribunal());
 		currentTribunal.setRegion(tribunal.getRegion());
+		currentTribunal.setTachess(tribunal.getTachess());
 		return tribunalService.save(currentTribunal);
 	}
 }

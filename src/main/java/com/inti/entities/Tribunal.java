@@ -1,24 +1,29 @@
 package com.inti.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
-public class Tribunal implements Serializable{
+public class Tribunal implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idTribunal;
 	private String adresse;
 	private Double fax;
 	private Double telTribunal;
 	private String region;
-	
+	@OneToMany(mappedBy = "tribunalTache")
+	private Set<Tache> tachess = new HashSet<>();
+
 	public Tribunal() {
 	}
 
@@ -69,16 +74,18 @@ public class Tribunal implements Serializable{
 		this.region = region;
 	}
 
+	public Set<Tache> getTachess() {
+		return tachess;
+	}
+
+	public void setTachess(Set<Tache> tachess) {
+		this.tachess = tachess;
+	}
+
 	@Override
 	public String toString() {
 		return "Tribunal [adresse=" + adresse + ", fax=" + fax + ", telTribunal=" + telTribunal + ", region=" + region
 				+ "]";
 	}
-	
-	
-	
-	
-	
-	
 
 }

@@ -16,7 +16,7 @@ public class Affaire implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idAffaire;
 	private String referenceAffaire;
 	private String titreAffaire;
@@ -25,8 +25,8 @@ public class Affaire implements Serializable {
 	@OneToMany(mappedBy = "affaireDoc", fetch = FetchType.EAGER)
 	private Set<Document> documents = new HashSet<>();
 	@OneToMany(mappedBy = "affaireTache", fetch = FetchType.EAGER)
-	private Set<Tache> taches = new HashSet<>();
-	
+	private Set<Tache> tachesss = new HashSet<>();
+
 	public Affaire() {
 	}
 
@@ -85,25 +85,18 @@ public class Affaire implements Serializable {
 		this.documents = documents;
 	}
 
-	public Set<Tache> getTaches() {
-		return taches;
+	public Set<Tache> getTachesss() {
+		return tachesss;
 	}
 
-	public void setTaches(Set<Tache> taches) {
-		this.taches = taches;
+	public void setTachesss(Set<Tache> tachesss) {
+		this.tachesss = tachesss;
 	}
 
 	@Override
 	public String toString() {
-		return "Affaire [referenceAffaire=" + referenceAffaire + ", titreAffaire=" + titreAffaire + ", descriptionAffaire="
-				+ descriptionAffaire + ", statutAffaire=" + statutAffaire + "]";
+		return "Affaire [referenceAffaire=" + referenceAffaire + ", titreAffaire=" + titreAffaire
+				+ ", descriptionAffaire=" + descriptionAffaire + ", statutAffaire=" + statutAffaire + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }

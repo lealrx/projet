@@ -35,10 +35,4 @@ public class AffaireService implements IAffaireService {
 		affaireRepository.delete(id);
 	}
 
-	@Override
-	public Affaire findOneByTitre(String titre) {
-		return affaireRepository.findOneByTitre(titre);
-	}
-	
-
 }

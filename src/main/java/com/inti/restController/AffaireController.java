@@ -16,11 +16,11 @@ import com.inti.service.interfaces.IAffaireService;
 @CrossOrigin
 @RestController
 public class AffaireController {
-	
+
 	@Autowired
 	IAffaireService affaireService;
-	
-	@RequestMapping(value= "affaires", method= RequestMethod.GET)
+
+	@RequestMapping(value = "affaires", method = RequestMethod.GET)
 	public List<Affaire> findAll() {
 		return affaireService.findAll();
 	}
@@ -48,7 +48,7 @@ public class AffaireController {
 		currentAffaire.setDescriptionAffaire(affaire.getDescriptionAffaire());
 		currentAffaire.setStatutAffaire(affaire.getStatutAffaire());
 		currentAffaire.setDocuments(affaire.getDocuments());
-		currentAffaire.setTaches(affaire.getTaches());
+		currentAffaire.setTachesss(affaire.getTachesss());
 		return affaireService.save(currentAffaire);
 	}
 
