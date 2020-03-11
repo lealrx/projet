@@ -2,9 +2,11 @@ package com.inti.service.interfaces;
 
 import java.util.List;
 
+import com.inti.entities.Utilisateur;
+
 public interface IUtilisateurService {
-	List<IUtilisateurService> findAll();
-	IUtilisateurService findOne(Long id);
-	IUtilisateurService save(IUtilisateurService user);
+	List<Utilisateur> findAll();
+	Utilisateur findOne(Long id);
+	Utilisateur save(Utilisateur user);
 	void delete(Long id);
 }

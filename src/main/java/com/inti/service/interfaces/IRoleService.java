@@ -2,9 +2,11 @@ package com.inti.service.interfaces;
 
 import java.util.List;
 
+import com.inti.entities.Role;
+
 public interface IRoleService {
-	List<IRoleService> findAll();
-	IRoleService findOne(Long id);
-	IRoleService save(IRoleService role);
+	List<Role> findAll();
+	Role findOne(Long id);
+	Role save(Role role);
 	void delete(Long id);
 }

@@ -2,9 +2,11 @@ package com.inti.service.interfaces;
 
 import java.util.List;
 
+import com.inti.entities.Particulier;
+
 public interface IParticulierService {
-	List<IParticulierService> findAll();
-	IParticulierService findOne(Long id);
-	IParticulierService save(IParticulierService particulier);
+	List<Particulier> findAll();
+	Particulier findOne(Long id);
+	Particulier save(Particulier particulier);
 	void delete(Long id);
 }
